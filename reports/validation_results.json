@@ -1,0 +1,1821 @@
+{
+ "meta": {
+  "fee": 0.001,
+  "slippage": 0.0005,
+  "combinations_per_coin": 35,
+  "coins": [
+   "BTCUSDT",
+   "ETHUSDT",
+   "SOLUSDT"
+  ],
+  "interval": "1h",
+  "selection_metric": "net Sharpe (>=5 trades)",
+  "train": [
+   "2023-10-01 00:00:00+00:00",
+   "2024-10-01 00:00:00+00:00"
+  ],
+  "walk_forward": [
+   "2024-10-01 00:00:00+00:00",
+   "2026-03-01 00:00:00+00:00"
+  ],
+  "folds": [
+   "2024-10-01 00:00:00+00:00",
+   "2025-01-01 00:00:00+00:00",
+   "2025-04-01 00:00:00+00:00",
+   "2025-07-01 00:00:00+00:00",
+   "2025-10-01 00:00:00+00:00",
+   "2026-01-01 00:00:00+00:00",
+   "2026-03-01 00:00:00+00:00"
+  ]
+ },
+ "train_in_sample": {
+  "ma_trend|BTCUSDT": {
+   "params": {
+    "fast": 50,
+    "slow": 100
+   },
+   "metrics": {
+    "net_return": 1.4656719886631424,
+    "max_drawdown": -0.18826118466136232,
+    "sharpe": 2.692780463077811,
+    "n_trades": 47,
+    "win_rate": 0.40425531914893614,
+    "avg_win": 0.0806905603119212,
+    "avg_loss": -0.01824134917736139,
+    "profit_factor": 2.4876190598821806,
+    "expectancy_per_trade": 0.02175240146724221,
+    "fees_paid": 1729.8340734324506,
+    "slippage_paid": 864.9213495849555,
+    "time_in_market": 0.5469034608378871
+   }
+  },
+  "breakout|BTCUSDT": {
+   "params": {
+    "entry_n": 72,
+    "exit_n": 72
+   },
+   "metrics": {
+    "net_return": 1.1554942682876854,
+    "max_drawdown": -0.272621906178944,
+    "sharpe": 2.3310280442701883,
+    "n_trades": 24,
+    "win_rate": 0.5416666666666666,
+    "avg_win": 0.09440859847092659,
+    "avg_loss": -0.031065474783018247,
+    "profit_factor": 2.8247043882255753,
+    "expectancy_per_trade": 0.036899648229535204,
+    "fees_paid": 864.8520590190685,
+    "slippage_paid": 432.4292425654824,
+    "time_in_market": 0.5540755919854281
+   }
+  },
+  "rsi_reversion|BTCUSDT": {
+   "params": {
+    "n": 14,
+    "entry": 20,
+    "exit": 60
+   },
+   "metrics": {
+    "net_return": 0.1625621243639268,
+    "max_drawdown": -0.1595348179458993,
+    "sharpe": 0.9059255486921366,
+    "n_trades": 11,
+    "win_rate": 0.6363636363636364,
+    "avg_win": 0.026900619633539867,
+    "avg_loss": -0.008494152479478443,
+    "profit_factor": 5.412175894930008,
+    "expectancy_per_trade": 0.014029793410624119,
+    "fees_paid": 234.62870484491987,
+    "slippage_paid": 117.31484681364356,
+    "time_in_market": 0.05851548269581056
+   }
+  },
+  "bollinger_reversion|BTCUSDT": {
+   "params": {
+    "n": 50,
+    "k": 2.0
+   },
+   "metrics": {
+    "net_return": -0.020981496152511103,
+    "max_drawdown": -0.26577809425892107,
+    "sharpe": 0.0827966012844585,
+    "n_trades": 77,
+    "win_rate": 0.6883116883116883,
+    "avg_win": 0.013541156359096774,
+    "avg_loss": -0.029621803029052176,
+    "profit_factor": 0.9734164261903407,
+    "expectancy_per_trade": 8.776641993346485e-05,
+    "fees_paid": 1656.3112714449085,
+    "slippage_paid": 828.1562043855027,
+    "time_in_market": 0.2527322404371585
+   }
+  },
+  "vol_filtered_trend|BTCUSDT": {
+   "params": {
+    "fast": 50,
+    "slow": 200,
+    "q": 0.9
+   },
+   "metrics": {
+    "net_return": 0.5828740883941019,
+    "max_drawdown": -0.192253460563801,
+    "sharpe": 1.6301901550542546,
+    "n_trades": 45,
+    "win_rate": 0.4666666666666667,
+    "avg_win": 0.04840639569988473,
+    "avg_loss": -0.021158203577506033,
+    "profit_factor": 1.8577943716886391,
+    "expectancy_per_trade": 0.011305276085276322,
+    "fees_paid": 1167.2692022571332,
+    "slippage_paid": 583.6364960401563,
+    "time_in_market": 0.48178506375227687
+   }
+  },
+  "ma_trend|ETHUSDT": {
+   "params": {
+    "fast": 10,
+    "slow": 100
+   },
+   "metrics": {
+    "net_return": 0.6630312217129688,
+    "max_drawdown": -0.21042215729400837,
+    "sharpe": 1.4530053287125697,
+    "n_trades": 72,
+    "win_rate": 0.3333333333333333,
+    "avg_win": 0.06380765304453433,
+    "avg_loss": -0.019023006632352103,
+    "profit_factor": 1.520153147056862,
+    "expectancy_per_trade": 0.008587213259943374,
+    "fees_paid": 1995.6110668482702,
+    "slippage_paid": 997.8079393568265,
+    "time_in_market": 0.5425774134790529
+   }
+  },
+  "breakout|ETHUSDT": {
+   "params": {
+    "entry_n": 336,
+    "exit_n": 72
+   },
+   "metrics": {
+    "net_return": 0.6125755949086535,
+    "max_drawdown": -0.23609288251280636,
+    "sharpe": 1.6193173009346828,
+    "n_trades": 11,
+    "win_rate": 0.5454545454545454,
+    "avg_win": 0.15893422437116073,
+    "avg_loss": -0.0637956762208127,
+    "profit_factor": 2.167405597083666,
+    "expectancy_per_trade": 0.05769336046571826,
+    "fees_paid": 318.24727613102624,
+    "slippage_paid": 159.12528884762241,
+    "time_in_market": 0.3225182149362477
+   }
+  },
+  "rsi_reversion|ETHUSDT": {
+   "params": {
+    "n": 14,
+    "entry": 20,
+    "exit": 60
+   },
+   "metrics": {
+    "net_return": -0.05904475586484004,
+    "max_drawdown": -0.23303172356995816,
+    "sharpe": -0.10310350312794532,
+    "n_trades": 12,
+    "win_rate": 0.5833333333333334,
+    "avg_win": 0.019302261367068946,
+    "avg_loss": -0.03741265715446853,
+    "profit_factor": 0.7035621642286144,
+    "expectancy_per_trade": -0.004328954683571671,
+    "fees_paid": 247.46005970976915,
+    "slippage_paid": 123.72997504048722,
+    "time_in_market": 0.07627504553734062
+   }
+  },
+  "bollinger_reversion|ETHUSDT": {
+   "params": {
+    "n": 20,
+    "k": 2.0
+   },
+   "metrics": {
+    "net_return": -0.12221598772654596,
+    "max_drawdown": -0.40536434855267456,
+    "sharpe": -0.18768204591823837,
+    "n_trades": 170,
+    "win_rate": 0.6470588235294118,
+    "avg_win": 0.011736207320032666,
+    "avg_loss": -0.022719621325590533,
+    "profit_factor": 0.9142245473968007,
+    "expectancy_per_trade": -0.00042467337842258144,
+    "fees_paid": 3449.9845975126327,
+    "slippage_paid": 1724.9932869606243,
+    "time_in_market": 0.2581967213114754
+   }
+  },
+  "vol_filtered_trend|ETHUSDT": {
+   "params": {
+    "fast": 50,
+    "slow": 200,
+    "q": 0.9
+   },
+   "metrics": {
+    "net_return": -0.08655419264899611,
+    "max_drawdown": -0.4083306139107782,
+    "sharpe": -0.07367149234103654,
+    "n_trades": 65,
+    "win_rate": 0.4307692307692308,
+    "avg_win": 0.04180941966291705,
+    "avg_loss": -0.03189854179983768,
+    "profit_factor": 0.9332682298465214,
+    "expectancy_per_trade": -0.0001474199389587199,
+    "fees_paid": 1402.4847313594323,
+    "slippage_paid": 701.2426752260038,
+    "time_in_market": 0.4503642987249545
+   }
+  },
+  "ma_trend|SOLUSDT": {
+   "params": {
+    "fast": 20,
+    "slow": 50
+   },
+   "metrics": {
+    "net_return": 3.499184939563796,
+    "max_drawdown": -0.3670985883354426,
+    "sharpe": 2.428200942064385,
+    "n_trades": 88,
+    "win_rate": 0.42045454545454547,
+    "avg_win": 0.09395803244276967,
+    "avg_loss": -0.03168322130800938,
+    "profit_factor": 1.546311018556789,
+    "expectancy_per_trade": 0.021143214928113628,
+    "fees_paid": 6283.603802204276,
+    "slippage_paid": 3141.8130054183816,
+    "time_in_market": 0.5449681238615665
+   }
+  },
+  "breakout|SOLUSDT": {
+   "params": {
+    "entry_n": 72,
+    "exit_n": 24
+   },
+   "metrics": {
+    "net_return": 2.211443064870193,
+    "max_drawdown": -0.3232267494777996,
+    "sharpe": 2.1786791483055725,
+    "n_trades": 44,
+    "win_rate": 0.4772727272727273,
+    "avg_win": 0.1149361330770125,
+    "avg_loss": -0.04317485512380394,
+    "profit_factor": 1.798573971604566,
+    "expectancy_per_trade": 0.032287207426585744,
+    "fees_paid": 2335.5653331221342,
+    "slippage_paid": 1167.7890710071913,
+    "time_in_market": 0.34073315118397085
+   }
+  },
+  "rsi_reversion|SOLUSDT": {
+   "params": {
+    "n": 14,
+    "entry": 30,
+    "exit": 60
+   },
+   "metrics": {
+    "net_return": 0.7100576584915306,
+    "max_drawdown": -0.3506867569459833,
+    "sharpe": 1.2770941283516306,
+    "n_trades": 42,
+    "win_rate": 0.7857142857142857,
+    "avg_win": 0.039175496054961914,
+    "avg_loss": -0.07543647769198494,
+    "profit_factor": 1.562695053785648,
+    "expectancy_per_trade": 0.014615787394901871,
+    "fees_paid": 1381.1548617463854,
+    "slippage_paid": 690.5797239509037,
+    "time_in_market": 0.21174863387978143
+   }
+  },
+  "bollinger_reversion|SOLUSDT": {
+   "params": {
+    "n": 50,
+    "k": 2.0
+   },
+   "metrics": {
+    "net_return": 0.9443313274758944,
+    "max_drawdown": -0.36855012704107315,
+    "sharpe": 1.4632559504627922,
+    "n_trades": 78,
+    "win_rate": 0.717948717948718,
+    "avg_win": 0.03018889620455142,
+    "avg_loss": -0.042637792006329604,
+    "profit_factor": 1.499904223174113,
+    "expectancy_per_trade": 0.009648035427123437,
+    "fees_paid": 2756.65414001887,
+    "slippage_paid": 1378.330464583772,
+    "time_in_market": 0.2501138433515483
+   }
+  },
+  "vol_filtered_trend|SOLUSDT": {
+   "params": {
+    "fast": 50,
+    "slow": 200,
+    "q": 0.9
+   },
+   "metrics": {
+    "net_return": 1.6194426016958645,
+    "max_drawdown": -0.29193539094544085,
+    "sharpe": 1.808136636834313,
+    "n_trades": 61,
+    "win_rate": 0.5409836065573771,
+    "avg_win": 0.07119070210705503,
+    "avg_loss": -0.043024685770544094,
+    "profit_factor": 1.60890711161888,
+    "expectancy_per_trade": 0.018763966687829196,
+    "fees_paid": 2553.0000089137466,
+    "slippage_paid": 1276.5050104394904,
+    "time_in_market": 0.46573315118397085
+   }
+  }
+ },
+ "walk_forward": {
+  "ma_trend|BTCUSDT": {
+   "metrics": {
+    "net_return": -0.13476855789982933,
+    "max_drawdown": -0.40960716771121486,
+    "sharpe": -0.15507577194715874,
+    "n_trades": 76,
+    "win_rate": 0.34210526315789475,
+    "avg_win": 0.04445264940814953,
+    "avg_loss": -0.02427134620376055,
+    "profit_factor": 0.9013443764744554,
+    "expectancy_per_trade": -0.0007605055996860441,
+    "fees_paid": 1680.3332559783212,
+    "slippage_paid": 840.1669211927133,
+    "time_in_market": 0.5234173126614987
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "fast": 50,
+      "slow": 100
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "fast": 50,
+      "slow": 100
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "fast": 50,
+      "slow": 100
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "fast": 50,
+      "slow": 100
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "fast": 50,
+      "slow": 100
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "fast": 50,
+      "slow": 100
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.1369153407997939,
+    "p05": -0.4612733002488203,
+    "p95": 0.3516839648048105,
+    "mean_expectancy": -0.001523280165983846
+   },
+   "percentile_vs_random": 57.99999999999999
+  },
+  "breakout|BTCUSDT": {
+   "metrics": {
+    "net_return": -0.10024041856366672,
+    "max_drawdown": -0.39580141578891437,
+    "sharpe": -0.12304986795605498,
+    "n_trades": 36,
+    "win_rate": 0.25,
+    "avg_win": 0.08448904101198293,
+    "avg_loss": -0.028927616000002015,
+    "profit_factor": 0.893140156657812,
+    "expectancy_per_trade": -0.000573451747005782,
+    "fees_paid": 865.4391586057714,
+    "slippage_paid": 432.7196532414983,
+    "time_in_market": 0.41957364341085274
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "entry_n": 72,
+      "exit_n": 72
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "entry_n": 72,
+      "exit_n": 72
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "entry_n": 168,
+      "exit_n": 72
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "entry_n": 168,
+      "exit_n": 72
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "entry_n": 168,
+      "exit_n": 72
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "entry_n": 168,
+      "exit_n": 72
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.06110797970130776,
+    "p05": -0.3877925720463089,
+    "p95": 0.3881279033468705,
+    "mean_expectancy": -0.0010415101329772861
+   },
+   "percentile_vs_random": 50.0
+  },
+  "rsi_reversion|BTCUSDT": {
+   "metrics": {
+    "net_return": 0.06519941754925984,
+    "max_drawdown": -0.17267313270500095,
+    "sharpe": 0.3435450018424641,
+    "n_trades": 18,
+    "win_rate": 0.7222222222222222,
+    "avg_win": 0.023868206424311384,
+    "avg_loss": -0.046413768570675286,
+    "profit_factor": 1.2780135217398916,
+    "expectancy_per_trade": 0.004345435592370641,
+    "fees_paid": 355.34063077485865,
+    "slippage_paid": 177.6706116387617,
+    "time_in_market": 0.07703488372093023
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "n": 14,
+      "entry": 20,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "n": 14,
+      "entry": 20,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "n": 14,
+      "entry": 20,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "n": 14,
+      "entry": 20,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "n": 14,
+      "entry": 20,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "n": 14,
+      "entry": 20,
+      "exit": 60
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.03943205119710801,
+    "p05": -0.25862081953361554,
+    "p95": 0.1860685566706793,
+    "mean_expectancy": -0.002239978597610356
+   },
+   "percentile_vs_random": 79.5
+  },
+  "bollinger_reversion|BTCUSDT": {
+   "metrics": {
+    "net_return": -0.33547489834865307,
+    "max_drawdown": -0.42515766825054624,
+    "sharpe": -0.8711165434650697,
+    "n_trades": 108,
+    "win_rate": 0.6111111111111112,
+    "avg_win": 0.011499401168173981,
+    "avg_loss": -0.02689253871452646,
+    "profit_factor": 0.6742552564760417,
+    "expectancy_per_trade": -0.003430797675098413,
+    "fees_paid": 1987.9006281175539,
+    "slippage_paid": 993.95022083414,
+    "time_in_market": 0.2931201550387597
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "n": 50,
+      "k": 2.0
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "n": 50,
+      "k": 2.0
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "n": 50,
+      "k": 2.0
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "n": 50,
+      "k": 2.0
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "n": 50,
+      "k": 2.0
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "n": 50,
+      "k": 2.0
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.27391542890796555,
+    "p05": -0.5133954696415773,
+    "p95": 0.0244485194987036,
+    "mean_expectancy": -0.002826444419767986
+   },
+   "percentile_vs_random": 40.0
+  },
+  "vol_filtered_trend|BTCUSDT": {
+   "metrics": {
+    "net_return": -0.21921253364187265,
+    "max_drawdown": -0.40234742025215575,
+    "sharpe": -0.4932991275683026,
+    "n_trades": 115,
+    "win_rate": 0.3652173913043478,
+    "avg_win": 0.024696274614341963,
+    "avg_loss": -0.017051208965595383,
+    "profit_factor": 0.8285417691725783,
+    "expectancy_per_trade": -0.001804301919009568,
+    "fees_paid": 2357.378780734485,
+    "slippage_paid": 1178.6897263529079,
+    "time_in_market": 0.4559916020671835
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "fast": 20,
+      "slow": 100,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "fast": 20,
+      "slow": 100,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "fast": 20,
+      "slow": 100,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.2408128454411849,
+    "p05": -0.517106070059855,
+    "p95": 0.07992783578936019,
+    "mean_expectancy": -0.002089263312011234
+   },
+   "percentile_vs_random": 56.99999999999999
+  },
+  "ma_trend|ETHUSDT": {
+   "metrics": {
+    "net_return": -0.3981185494602315,
+    "max_drawdown": -0.6201926495795759,
+    "sharpe": -0.5675850069674457,
+    "n_trades": 87,
+    "win_rate": 0.26436781609195403,
+    "avg_win": 0.07656874795265298,
+    "avg_loss": -0.03195426913442398,
+    "profit_factor": 0.7741043235017198,
+    "expectancy_per_trade": -0.0032642761114036354,
+    "fees_paid": 1530.2841781963277,
+    "slippage_paid": 765.1416676581729,
+    "time_in_market": 0.4962855297157623
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "fast": 10,
+      "slow": 100
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "fast": 10,
+      "slow": 100
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "fast": 10,
+      "slow": 100
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "fast": 50,
+      "slow": 200
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "fast": 50,
+      "slow": 200
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "fast": 50,
+      "slow": 100
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.22223478912899036,
+    "p05": -0.6672620273237813,
+    "p95": 0.5509853409159592,
+    "mean_expectancy": -0.002048244777966235
+   },
+   "percentile_vs_random": 38.5
+  },
+  "breakout|ETHUSDT": {
+   "metrics": {
+    "net_return": 0.15973694373454927,
+    "max_drawdown": -0.35540421880910567,
+    "sharpe": 0.4941646254767639,
+    "n_trades": 19,
+    "win_rate": 0.42105263157894735,
+    "avg_win": 0.11892526441168896,
+    "avg_loss": -0.061029091210737525,
+    "profit_factor": 1.1680700542116293,
+    "expectancy_per_trade": 0.01474116378817888,
+    "fees_paid": 484.7993520440984,
+    "slippage_paid": 242.40025716429142,
+    "time_in_market": 0.2326388888888889
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "entry_n": 336,
+      "exit_n": 72
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "entry_n": 336,
+      "exit_n": 72
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "entry_n": 336,
+      "exit_n": 72
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "entry_n": 336,
+      "exit_n": 72
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "entry_n": 336,
+      "exit_n": 72
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "entry_n": 336,
+      "exit_n": 24
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.029530367744401483,
+    "p05": -0.49326088410376795,
+    "p95": 0.6475880749940773,
+    "mean_expectancy": -0.00018524348986488108
+   },
+   "percentile_vs_random": 75.5
+  },
+  "rsi_reversion|ETHUSDT": {
+   "metrics": {
+    "net_return": -0.050174363460935956,
+    "max_drawdown": -0.2924075339382938,
+    "sharpe": 0.04507134873980805,
+    "n_trades": 25,
+    "win_rate": 0.6,
+    "avg_win": 0.03647575296936694,
+    "avg_loss": -0.05562861224336453,
+    "profit_factor": 0.9046102580978316,
+    "expectancy_per_trade": -0.00036599311572564684,
+    "fees_paid": 458.6455384091828,
+    "slippage_paid": 229.32281576075223,
+    "time_in_market": 0.12443475452196383
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "n": 14,
+      "entry": 20,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "n": 14,
+      "entry": 20,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "n": 14,
+      "entry": 20,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "n": 14,
+      "entry": 20,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "n": 14,
+      "entry": 20,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "n": 14,
+      "entry": 20,
+      "exit": 60
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.05653642083531363,
+    "p05": -0.4473907748918074,
+    "p95": 0.5302523483006408,
+    "mean_expectancy": -0.0024067756237475123
+   },
+   "percentile_vs_random": 56.99999999999999
+  },
+  "bollinger_reversion|ETHUSDT": {
+   "metrics": {
+    "net_return": -0.4447522078397703,
+    "max_drawdown": -0.5597149891386342,
+    "sharpe": -0.713127243200895,
+    "n_trades": 183,
+    "win_rate": 0.6174863387978142,
+    "avg_win": 0.01597661446691964,
+    "avg_loss": -0.03257929201091594,
+    "profit_factor": 0.7556648701620768,
+    "expectancy_per_trade": -0.002596683092908177,
+    "fees_paid": 2885.7507123403575,
+    "slippage_paid": 1442.8753264460179,
+    "time_in_market": 0.2882751937984496
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "n": 20,
+      "k": 2.0
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "n": 20,
+      "k": 2.0
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "n": 20,
+      "k": 2.0
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "n": 50,
+      "k": 2.0
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "n": 50,
+      "k": 2.0
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "n": 50,
+      "k": 2.0
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.42580695026971666,
+    "p05": -0.7034892070312049,
+    "p95": -0.03158508227245143,
+    "mean_expectancy": -0.002852486316863484
+   },
+   "percentile_vs_random": 53.0
+  },
+  "vol_filtered_trend|ETHUSDT": {
+   "metrics": {
+    "net_return": -0.2772521147287754,
+    "max_drawdown": -0.49536876667032315,
+    "sharpe": -0.34564518993899807,
+    "n_trades": 76,
+    "win_rate": 0.3815789473684211,
+    "avg_win": 0.05568334422684446,
+    "avg_loss": -0.03803376735243215,
+    "profit_factor": 0.8399961292637023,
+    "expectancy_per_trade": -0.0022732905656029146,
+    "fees_paid": 1471.7218410467844,
+    "slippage_paid": 735.8607792886817,
+    "time_in_market": 0.43136304909560724
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.24378478848307483,
+    "p05": -0.6623835041507348,
+    "p95": 0.4274976756400243,
+    "mean_expectancy": -0.002859569153434694
+   },
+   "percentile_vs_random": 58.5
+  },
+  "ma_trend|SOLUSDT": {
+   "metrics": {
+    "net_return": -0.3855965152675742,
+    "max_drawdown": -0.6691483097285592,
+    "sharpe": -0.3461743730679581,
+    "n_trades": 108,
+    "win_rate": 0.28703703703703703,
+    "avg_win": 0.06912740960121433,
+    "avg_loss": -0.031805372969915785,
+    "profit_factor": 0.8355679732962111,
+    "expectancy_per_trade": -0.002833926120795104,
+    "fees_paid": 2050.945209380358,
+    "slippage_paid": 1025.4724098031788,
+    "time_in_market": 0.4718184754521964
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "fast": 20,
+      "slow": 50
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "fast": 10,
+      "slow": 50
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "fast": 10,
+      "slow": 50
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "fast": 50,
+      "slow": 200
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "fast": 50,
+      "slow": 200
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "fast": 50,
+      "slow": 200
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.3953300340776634,
+    "p05": -0.753586303260685,
+    "p95": 0.20385792338571182,
+    "mean_expectancy": -0.00380960212289986
+   },
+   "percentile_vs_random": 62.5
+  },
+  "breakout|SOLUSDT": {
+   "metrics": {
+    "net_return": -0.2733678005632544,
+    "max_drawdown": -0.5239987639140644,
+    "sharpe": -0.2853058387340396,
+    "n_trades": 47,
+    "win_rate": 0.3191489361702128,
+    "avg_win": 0.07573417770422737,
+    "avg_loss": -0.04178963664398311,
+    "profit_factor": 0.7984755710127504,
+    "expectancy_per_trade": -0.004282036320086144,
+    "fees_paid": 915.9124024001901,
+    "slippage_paid": 457.95586124760956,
+    "time_in_market": 0.26776485788113696
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "entry_n": 72,
+      "exit_n": 24
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "entry_n": 168,
+      "exit_n": 72
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "entry_n": 72,
+      "exit_n": 24
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "entry_n": 168,
+      "exit_n": 72
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "entry_n": 168,
+      "exit_n": 24
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "entry_n": 168,
+      "exit_n": 24
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.18688961669472806,
+    "p05": -0.6306700528485375,
+    "p95": 0.44849989566293097,
+    "mean_expectancy": -0.0037683360864931514
+   },
+   "percentile_vs_random": 44.0
+  },
+  "rsi_reversion|SOLUSDT": {
+   "metrics": {
+    "net_return": -0.32676151564706013,
+    "max_drawdown": -0.4814900786423284,
+    "sharpe": -0.3168927588112598,
+    "n_trades": 69,
+    "win_rate": 0.5942028985507246,
+    "avg_win": 0.03336175906448641,
+    "avg_loss": -0.05919559581078473,
+    "profit_factor": 0.7658989570464801,
+    "expectancy_per_trade": -0.00419774726171058,
+    "fees_paid": 1123.6136131662663,
+    "slippage_paid": 561.8064110342831,
+    "time_in_market": 0.26752260981912146
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "n": 14,
+      "entry": 30,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "n": 14,
+      "entry": 30,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "n": 14,
+      "entry": 30,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "n": 14,
+      "entry": 30,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "n": 14,
+      "entry": 30,
+      "exit": 60
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "n": 14,
+      "entry": 30,
+      "exit": 60
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.22454676743492707,
+    "p05": -0.6196124444243045,
+    "p95": 0.5518229643182242,
+    "mean_expectancy": -0.0034255193059435024
+   },
+   "percentile_vs_random": 48.5
+  },
+  "bollinger_reversion|SOLUSDT": {
+   "metrics": {
+    "net_return": -0.42218879102722184,
+    "max_drawdown": -0.5764925497225282,
+    "sharpe": -0.5864683853242338,
+    "n_trades": 91,
+    "win_rate": 0.6043956043956044,
+    "avg_win": 0.025046366413461755,
+    "avg_loss": -0.05059543232943792,
+    "profit_factor": 0.7129166852797737,
+    "expectancy_per_trade": -0.004877861660652401,
+    "fees_paid": 1434.8158294734747,
+    "slippage_paid": 717.4073973204789,
+    "time_in_market": 0.25088824289405687
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "n": 50,
+      "k": 2.0
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "n": 50,
+      "k": 2.0
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "n": 50,
+      "k": 2.5
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "n": 50,
+      "k": 2.5
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "n": 50,
+      "k": 2.5
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "n": 50,
+      "k": 2.5
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.26173858550189505,
+    "p05": -0.6218007937648476,
+    "p95": 0.30514338252486634,
+    "mean_expectancy": -0.002905133640807612
+   },
+   "percentile_vs_random": 31.5
+  },
+  "vol_filtered_trend|SOLUSDT": {
+   "metrics": {
+    "net_return": -0.13284855015203045,
+    "max_drawdown": -0.4456679022950104,
+    "sharpe": 0.01526216377298998,
+    "n_trades": 68,
+    "win_rate": 0.36764705882352944,
+    "avg_win": 0.07013743163364451,
+    "avg_loss": -0.04032914433233538,
+    "profit_factor": 0.9276339667403992,
+    "expectancy_per_trade": 0.00028356741986310926,
+    "fees_paid": 1405.7861771941912,
+    "slippage_paid": 702.8932836454941,
+    "time_in_market": 0.4160206718346253
+   },
+   "chosen_params": [
+    {
+     "fold_start": "2024-10-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2025-01-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2025-04-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2025-07-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2025-10-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    },
+    {
+     "fold_start": "2026-01-01",
+     "params": {
+      "fast": 50,
+      "slow": 200,
+      "q": 0.9
+     }
+    }
+   ],
+   "random": {
+    "mean_return": -0.287372224433499,
+    "p05": -0.6945616784413879,
+    "p95": 0.27739825606730706,
+    "mean_expectancy": -0.004057633565918014
+   },
+   "percentile_vs_random": 72.5
+  }
+ },
+ "grid_sweep": {
+  "ma_trend|BTCUSDT": {
+   "2023-10..2024-09": {
+    "median": 0.5958164472148167,
+    "best": 1.4656719886631424,
+    "worst": 0.19479162714393583,
+    "share_positive": 1.0,
+    "buy_hold": 1.3392132464518278
+   },
+   "2024-10..2025-09": {
+    "median": 0.02110965362393291,
+    "best": 0.22788431216570393,
+    "worst": -0.27586505735733946,
+    "share_positive": 0.5,
+    "buy_hold": 0.7897641477061796
+   },
+   "2025-10..2026-02": {
+    "median": -0.2602617961106269,
+    "best": -0.15832503158045397,
+    "worst": -0.3414514230297424,
+    "share_positive": 0.0,
+    "buy_hold": -0.4155031866076765
+   }
+  },
+  "breakout|BTCUSDT": {
+   "2023-10..2024-09": {
+    "median": 0.1742022144185713,
+    "best": 1.1554942682876854,
+    "worst": -0.0616322640982615,
+    "share_positive": 0.8181818181818182,
+    "buy_hold": 1.3392132464518278
+   },
+   "2024-10..2025-09": {
+    "median": 0.1553483097988344,
+    "best": 0.3608280434123061,
+    "worst": -0.1533149190677463,
+    "share_positive": 0.8181818181818182,
+    "buy_hold": 0.7897641477061796
+   },
+   "2025-10..2026-02": {
+    "median": -0.14576009454855288,
+    "best": -0.04557731565613854,
+    "worst": -0.3229798698885711,
+    "share_positive": 0.0,
+    "buy_hold": -0.4155031866076765
+   }
+  },
+  "rsi_reversion|BTCUSDT": {
+   "2023-10..2024-09": {
+    "median": 0.049025344922680625,
+    "best": 0.1625621243639268,
+    "worst": -0.06335359604476598,
+    "share_positive": 0.6666666666666666,
+    "buy_hold": 1.3392132464518278
+   },
+   "2024-10..2025-09": {
+    "median": -0.018603720857130746,
+    "best": 0.030143778000487842,
+    "worst": -0.07263395278986373,
+    "share_positive": 0.3333333333333333,
+    "buy_hold": 0.7897641477061796
+   },
+   "2025-10..2026-02": {
+    "median": -0.17437230790802555,
+    "best": 0.06747872347960238,
+    "worst": -0.23866976554870256,
+    "share_positive": 0.16666666666666666,
+    "buy_hold": -0.4155031866076765
+   }
+  },
+  "bollinger_reversion|BTCUSDT": {
+   "2023-10..2024-09": {
+    "median": -0.21427812500182863,
+    "best": -0.020981496152511103,
+    "worst": -0.34018354446030086,
+    "share_positive": 0.0,
+    "buy_hold": 1.3392132464518278
+   },
+   "2024-10..2025-09": {
+    "median": -0.05688988111204035,
+    "best": -0.00937526823360657,
+    "worst": -0.1958511570044913,
+    "share_positive": 0.0,
+    "buy_hold": 0.7897641477061796
+   },
+   "2025-10..2026-02": {
+    "median": -0.331001681225364,
+    "best": -0.2526405189671239,
+    "worst": -0.3821822164581762,
+    "share_positive": 0.0,
+    "buy_hold": -0.4155031866076765
+   }
+  },
+  "vol_filtered_trend|BTCUSDT": {
+   "2023-10..2024-09": {
+    "median": -0.05862045989606757,
+    "best": 0.5828740883941019,
+    "worst": -0.1576618716936049,
+    "share_positive": 0.3333333333333333,
+    "buy_hold": 1.3392132464518278
+   },
+   "2024-10..2025-09": {
+    "median": -0.07787653828481317,
+    "best": 0.17532118391803309,
+    "worst": -0.2277159856069585,
+    "share_positive": 0.3333333333333333,
+    "buy_hold": 0.7897641477061796
+   },
+   "2025-10..2026-02": {
+    "median": -0.2431722622796273,
+    "best": -0.18776286047518365,
+    "worst": -0.28093057356322193,
+    "share_positive": 0.0,
+    "buy_hold": -0.4155031866076765
+   }
+  },
+  "ma_trend|ETHUSDT": {
+   "2023-10..2024-09": {
+    "median": 0.4492598720289068,
+    "best": 0.6630312217129688,
+    "worst": 0.03357346546621609,
+    "share_positive": 1.0,
+    "buy_hold": 0.5498231839451833
+   },
+   "2024-10..2025-09": {
+    "median": -0.07341513922589904,
+    "best": 0.2609600835296684,
+    "worst": -0.2815280672959374,
+    "share_positive": 0.375,
+    "buy_hold": 0.5780898196272577
+   },
+   "2025-10..2026-02": {
+    "median": -0.3089554099239576,
+    "best": -0.16733525506022817,
+    "worst": -0.3780439559925318,
+    "share_positive": 0.0,
+    "buy_hold": -0.5278668951870424
+   }
+  },
+  "breakout|ETHUSDT": {
+   "2023-10..2024-09": {
+    "median": 0.1496897703902389,
+    "best": 0.6125755949086535,
+    "worst": -0.15354840054560337,
+    "share_positive": 0.8181818181818182,
+    "buy_hold": 0.5498231839451833
+   },
+   "2024-10..2025-09": {
+    "median": 0.2547444159818941,
+    "best": 0.5679003449121418,
+    "worst": -0.336561402409839,
+    "share_positive": 0.7272727272727273,
+    "buy_hold": 0.5780898196272577
+   },
+   "2025-10..2026-02": {
+    "median": -0.0930826946186839,
+    "best": 0.0029520454032114785,
+    "worst": -0.38590357735898684,
+    "share_positive": 0.09090909090909091,
+    "buy_hold": -0.5278668951870424
+   }
+  },
+  "rsi_reversion|ETHUSDT": {
+   "2023-10..2024-09": {
+    "median": -0.19578540910628645,
+    "best": -0.05904475586484004,
+    "worst": -0.31522948377932447,
+    "share_positive": 0.0,
+    "buy_hold": 0.5498231839451833
+   },
+   "2024-10..2025-09": {
+    "median": -0.2343581557177139,
+    "best": -0.11925121827132901,
+    "worst": -0.31735519146975344,
+    "share_positive": 0.0,
+    "buy_hold": 0.5780898196272577
+   },
+   "2025-10..2026-02": {
+    "median": -0.16611479019504533,
+    "best": 0.08730838912076977,
+    "worst": -0.3012336936019837,
+    "share_positive": 0.16666666666666666,
+    "buy_hold": -0.5278668951870424
+   }
+  },
+  "bollinger_reversion|ETHUSDT": {
+   "2023-10..2024-09": {
+    "median": -0.18073702273362174,
+    "best": -0.12221598772654596,
+    "worst": -0.2896493339476952,
+    "share_positive": 0.0,
+    "buy_hold": 0.5498231839451833
+   },
+   "2024-10..2025-09": {
+    "median": -0.2922478200647471,
+    "best": -0.2530243836918289,
+    "worst": -0.3618915582438421,
+    "share_positive": 0.0,
+    "buy_hold": 0.5780898196272577
+   },
+   "2025-10..2026-02": {
+    "median": -0.2332339257289459,
+    "best": -0.0961104445514277,
+    "worst": -0.4016491252134635,
+    "share_positive": 0.0,
+    "buy_hold": -0.5278668951870424
+   }
+  },
+  "vol_filtered_trend|ETHUSDT": {
+   "2023-10..2024-09": {
+    "median": -0.17584771481340222,
+    "best": -0.08655419264899611,
+    "worst": -0.422009110013141,
+    "share_positive": 0.0,
+    "buy_hold": 0.5498231839451833
+   },
+   "2024-10..2025-09": {
+    "median": -0.30257854121992867,
+    "best": 0.12570284450361013,
+    "worst": -0.4171974424220454,
+    "share_positive": 0.16666666666666666,
+    "buy_hold": 0.5780898196272577
+   },
+   "2025-10..2026-02": {
+    "median": -0.1865884631976053,
+    "best": -0.08125885028403845,
+    "worst": -0.3618015313041879,
+    "share_positive": 0.0,
+    "buy_hold": -0.5278668951870424
+   }
+  },
+  "ma_trend|SOLUSDT": {
+   "2023-10..2024-09": {
+    "median": 2.6145005820513294,
+    "best": 3.547184744333415,
+    "worst": 1.9369730120680484,
+    "share_positive": 1.0,
+    "buy_hold": 6.127670670664998
+   },
+   "2024-10..2025-09": {
+    "median": 0.06987415124936192,
+    "best": 0.3216353288472109,
+    "worst": -0.35358600144755414,
+    "share_positive": 0.75,
+    "buy_hold": 0.3495161053746041
+   },
+   "2025-10..2026-02": {
+    "median": -0.41715451426687067,
+    "best": -0.3181786116669836,
+    "worst": -0.5245621938633115,
+    "share_positive": 0.0,
+    "buy_hold": -0.5947702542637859
+   }
+  },
+  "breakout|SOLUSDT": {
+   "2023-10..2024-09": {
+    "median": 1.5507403939087467,
+    "best": 2.447471331267665,
+    "worst": 0.4066148670327898,
+    "share_positive": 1.0,
+    "buy_hold": 6.127670670664998
+   },
+   "2024-10..2025-09": {
+    "median": 0.057512985893795054,
+    "best": 0.44992531909152644,
+    "worst": -0.31548455845906587,
+    "share_positive": 0.7272727272727273,
+    "buy_hold": 0.3495161053746041
+   },
+   "2025-10..2026-02": {
+    "median": -0.2664386520541481,
+    "best": -0.04716145147369066,
+    "worst": -0.507831429741428,
+    "share_positive": 0.0,
+    "buy_hold": -0.5947702542637859
+   }
+  },
+  "rsi_reversion|SOLUSDT": {
+   "2023-10..2024-09": {
+    "median": 0.10380444655292576,
+    "best": 0.7100576584915306,
+    "worst": 0.0697152448515086,
+    "share_positive": 1.0,
+    "buy_hold": 6.127670670664998
+   },
+   "2024-10..2025-09": {
+    "median": -0.22834323971898418,
+    "best": -0.20607912884336466,
+    "worst": -0.4370298422679305,
+    "share_positive": 0.0,
+    "buy_hold": 0.3495161053746041
+   },
+   "2025-10..2026-02": {
+    "median": -0.11376943141237189,
+    "best": 0.035530955768618755,
+    "worst": -0.26054142119491486,
+    "share_positive": 0.16666666666666666,
+    "buy_hold": -0.5947702542637859
+   }
+  },
+  "bollinger_reversion|SOLUSDT": {
+   "2023-10..2024-09": {
+    "median": 0.38813177382592634,
+    "best": 0.9443313274758944,
+    "worst": 0.10632677040627625,
+    "share_positive": 1.0,
+    "buy_hold": 6.127670670664998
+   },
+   "2024-10..2025-09": {
+    "median": -0.35943322433879404,
+    "best": -0.08252767380738857,
+    "worst": -0.42126881213603007,
+    "share_positive": 0.0,
+    "buy_hold": 0.3495161053746041
+   },
+   "2025-10..2026-02": {
+    "median": -0.26852024294258486,
+    "best": -0.10992238078298888,
+    "worst": -0.399403527438825,
+    "share_positive": 0.0,
+    "buy_hold": -0.5947702542637859
+   }
+  },
+  "vol_filtered_trend|SOLUSDT": {
+   "2023-10..2024-09": {
+    "median": 0.12474070497953693,
+    "best": 1.6194426016958645,
+    "worst": -0.36432635064904484,
+    "share_positive": 0.6666666666666666,
+    "buy_hold": 6.127670670664998
+   },
+   "2024-10..2025-09": {
+    "median": -0.08654614432878327,
+    "best": 0.31107424919014925,
+    "worst": -0.33753052641277015,
+    "share_positive": 0.3333333333333333,
+    "buy_hold": 0.3495161053746041
+   },
+   "2025-10..2026-02": {
+    "median": -0.31967647246006686,
+    "best": -0.25062354490328875,
+    "worst": -0.43385443219057007,
+    "share_positive": 0.0,
+    "buy_hold": -0.5947702542637859
+   }
+  }
+ },
+ "buy_hold": {
+  "BTCUSDT": {
+   "walk_forward": {
+    "net_return": 0.05100801562105284,
+    "max_drawdown": -0.5008379415223315,
+    "sharpe": 0.30869061307857726,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.0510080156210528,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.0510080156210528,
+    "fees_paid": 20.510610746977484,
+    "slippage_paid": 10.255440585039906,
+    "time_in_market": 0.9999192506459949
+   },
+   "train": {
+    "net_return": 1.3392132464518278,
+    "max_drawdown": -0.3231069072207684,
+    "sharpe": 1.936606277894015,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 1.339213246451828,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 1.339213246451828,
+    "fees_paid": 33.4055580025408,
+    "slippage_paid": 16.70613956230833,
+    "time_in_market": 0.9998861566484517
+   }
+  },
+  "ETHUSDT": {
+   "walk_forward": {
+    "net_return": -0.2520962494587785,
+    "max_drawdown": -0.652821619611125,
+    "sharpe": 0.06623109849232396,
+    "n_trades": 1,
+    "win_rate": 0.0,
+    "avg_win": NaN,
+    "avg_loss": -0.2520962494587785,
+    "profit_factor": 0.0,
+    "expectancy_per_trade": -0.2520962494587785,
+    "fees_paid": 17.47653401945165,
+    "slippage_paid": 8.737643322645518,
+    "time_in_market": 0.9999192506459949
+   },
+   "train": {
+    "net_return": 0.5498231839451833,
+    "max_drawdown": -0.46655063314477885,
+    "sharpe": 1.0312472742472019,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.5498231839451834,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.5498231839451834,
+    "fees_paid": 25.503755575046863,
+    "slippage_paid": 12.753261909735983,
+    "time_in_market": 0.9998861566484517
+   }
+  },
+  "SOLUSDT": {
+   "walk_forward": {
+    "net_return": -0.45451560528873003,
+    "max_drawdown": -0.7362003912800448,
+    "sharpe": -0.08231173446117913,
+    "n_trades": 1,
+    "win_rate": 0.0,
+    "avg_win": NaN,
+    "avg_loss": -0.4545156052887301,
+    "profit_factor": 0.0,
+    "expectancy_per_trade": -0.4545156052887301,
+    "fees_paid": 15.450314241374056,
+    "slippage_paid": 7.724026625257911,
+    "time_in_market": 0.9999192506459949
+   },
+   "train": {
+    "net_return": 6.127670670664998,
+    "max_drawdown": -0.4651585441675834,
+    "sharpe": 2.4546590409901623,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 6.127670670664998,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 6.127670670664998,
+    "fees_paid": 81.3380647514214,
+    "slippage_paid": 40.68438205799887,
+    "time_in_market": 0.9998861566484517
+   }
+  }
+ }
+}
