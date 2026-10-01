@@ -1,0 +1,837 @@
+{
+ "period_start": "2026-03-01 00:00:00+00:00",
+ "results": {
+  "ma_trend|BTCUSDT": {
+   "metrics": {
+    "net_return": -0.08161823334174512,
+    "max_drawdown": -0.3161549945811416,
+    "sharpe": -0.42705887021055455,
+    "n_trades": 25,
+    "win_rate": 0.36,
+    "avg_win": 0.03672111324375714,
+    "avg_loss": -0.0242100174586692,
+    "profit_factor": 0.7663053349063376,
+    "expectancy_per_trade": -0.0022748104057957173,
+    "fees_paid": 442.9451662808449,
+    "slippage_paid": 221.47254519924383,
+    "time_in_market": 0.541213768115942
+   },
+   "buy_hold": {
+    "net_return": 0.17299575039941284,
+    "max_drawdown": -0.29364846529247823,
+    "sharpe": 0.9773650691554725,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.17299575039941284,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.17299575039941284,
+    "fees_paid": 21.731709193207315,
+    "slippage_paid": 10.86629523548044,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": 0.012590081473291579,
+    "p05": -0.2145663871479999,
+    "p95": 0.2933313622077874,
+    "mean_expectancy": 0.0010251750887526698
+   },
+   "percentile_vs_random": 33.0,
+   "params": {
+    "fast": 50,
+    "slow": 100
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": 1.1648706584384394,
+    "max_drawdown": -0.400891562431681,
+    "sharpe": 1.1144198832266639,
+    "n_trades": 120,
+    "win_rate": 0.36666666666666664,
+    "avg_win": 0.06094722166986475,
+    "avg_loss": -0.022383044575114856,
+    "profit_factor": 1.270407023131887,
+    "expectancy_per_trade": 0.008171386381377673,
+    "fees_paid": 5730.324615607539,
+    "slippage_paid": 2865.1673688530796,
+    "time_in_market": 0.5333049886621315
+   }
+  },
+  "breakout|BTCUSDT": {
+   "metrics": {
+    "net_return": 0.1451284109592541,
+    "max_drawdown": -0.12691518957054293,
+    "sharpe": 1.2111855930714528,
+    "n_trades": 10,
+    "win_rate": 0.3,
+    "avg_win": 0.09831552290084117,
+    "avg_loss": -0.019378466640916032,
+    "profit_factor": 2.092264360375322,
+    "expectancy_per_trade": 0.01592973022161113,
+    "fees_paid": 193.51420461938682,
+    "slippage_paid": 96.75753769864467,
+    "time_in_market": 0.3867753623188406
+   },
+   "buy_hold": {
+    "net_return": 0.17299575039941284,
+    "max_drawdown": -0.29364846529247823,
+    "sharpe": 0.9773650691554725,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.17299575039941284,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.17299575039941284,
+    "fees_paid": 21.731709193207315,
+    "slippage_paid": 10.86629523548044,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": 0.0356909443895819,
+    "p05": -0.169679627598208,
+    "p95": 0.29934987881717506,
+    "mean_expectancy": 0.004528420684699984
+   },
+   "percentile_vs_random": 77.5,
+   "params": {
+    "entry_n": 168,
+    "exit_n": 72
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": 0.8414582613160633,
+    "max_drawdown": -0.33235025531858853,
+    "sharpe": 1.0344245947682085,
+    "n_trades": 46,
+    "win_rate": 0.3695652173913043,
+    "avg_win": 0.09916767197406805,
+    "avg_loss": -0.031552701573484915,
+    "profit_factor": 1.4250884737681087,
+    "expectancy_per_trade": 0.016757001694089006,
+    "fees_paid": 1926.632457358669,
+    "slippage_paid": 963.3190548127612,
+    "time_in_market": 0.39767573696145125
+   }
+  },
+  "rsi_reversion|BTCUSDT": {
+   "metrics": {
+    "net_return": -0.07615862466875567,
+    "max_drawdown": -0.1709797935711983,
+    "sharpe": -0.8108823629158308,
+    "n_trades": 5,
+    "win_rate": 0.8,
+    "avg_win": 0.01590292830958407,
+    "avg_loss": -0.13249184482413276,
+    "profit_factor": 0.4529478894226955,
+    "expectancy_per_trade": -0.013776026317159296,
+    "fees_paid": 99.39432690245722,
+    "slippage_paid": 49.69701032749353,
+    "time_in_market": 0.07721920289855072
+   },
+   "buy_hold": {
+    "net_return": 0.17299575039941284,
+    "max_drawdown": -0.29364846529247823,
+    "sharpe": 0.9773650691554725,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.17299575039941284,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.17299575039941284,
+    "fees_paid": 21.731709193207315,
+    "slippage_paid": 10.86629523548044,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": 0.0052809921918718075,
+    "p05": -0.12169468270680771,
+    "p95": 0.13048869879474279,
+    "mean_expectancy": 0.0012016858579812259
+   },
+   "percentile_vs_random": 13.0,
+   "params": {
+    "n": 14,
+    "entry": 20,
+    "exit": 60
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": 0.23836049773728574,
+    "max_drawdown": -0.17267313270500073,
+    "sharpe": 0.5847686365092768,
+    "n_trades": 29,
+    "win_rate": 0.6896551724137931,
+    "avg_win": 0.024929551047541364,
+    "avg_loss": -0.029560605863476655,
+    "profit_factor": 1.7701800034031603,
+    "expectancy_per_trade": 0.008018812695846117,
+    "fees_paid": 647.7342634313575,
+    "slippage_paid": 323.8679705174406,
+    "time_in_market": 0.06934996220710507
+   }
+  },
+  "bollinger_reversion|BTCUSDT": {
+   "metrics": {
+    "net_return": -0.18445595954145666,
+    "max_drawdown": -0.25781634381041973,
+    "sharpe": -1.5503782578136065,
+    "n_trades": 36,
+    "win_rate": 0.6111111111111112,
+    "avg_win": 0.009361027920473799,
+    "avg_loss": -0.027854832021329923,
+    "profit_factor": 0.4894104568121944,
+    "expectancy_per_trade": -0.005111806501338761,
+    "fees_paid": 628.3564936825123,
+    "slippage_paid": 314.17802133494854,
+    "time_in_market": 0.2866847826086957
+   },
+   "buy_hold": {
+    "net_return": 0.17299575039941284,
+    "max_drawdown": -0.29364846529247823,
+    "sharpe": 0.9773650691554725,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.17299575039941284,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.17299575039941284,
+    "fees_paid": 21.731709193207315,
+    "slippage_paid": 10.86629523548044,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": -0.047910415419855044,
+    "p05": -0.24010160773658099,
+    "p95": 0.1680624887544852,
+    "mean_expectancy": -0.0012481026964482485
+   },
+   "percentile_vs_random": 12.0,
+   "params": {
+    "n": 50,
+    "k": 2.0
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": -0.34535667955689564,
+    "max_drawdown": -0.5280652946103148,
+    "sharpe": -0.45120114710676384,
+    "n_trades": 184,
+    "win_rate": 0.6467391304347826,
+    "avg_win": 0.012408754320433715,
+    "avg_loss": -0.028208828114802367,
+    "profit_factor": 0.8078907989391886,
+    "expectancy_per_trade": -0.0019398481702746814,
+    "fees_paid": 3595.0095017228973,
+    "slippage_paid": 1797.5052355982532,
+    "time_in_market": 0.27640778533635674
+   }
+  },
+  "vol_filtered_trend|BTCUSDT": {
+   "metrics": {
+    "net_return": 0.031223909856032073,
+    "max_drawdown": -0.1484181970234446,
+    "sharpe": 0.36051739252955706,
+    "n_trades": 29,
+    "win_rate": 0.41379310344827586,
+    "avg_win": 0.02562507994901742,
+    "avg_loss": -0.015765573419425943,
+    "profit_factor": 1.1152214617840919,
+    "expectancy_per_trade": 0.001361593491654068,
+    "fees_paid": 581.9837625621967,
+    "slippage_paid": 290.99217758482564,
+    "time_in_market": 0.4941123188405797
+   },
+   "buy_hold": {
+    "net_return": 0.17299575039941284,
+    "max_drawdown": -0.29364846529247823,
+    "sharpe": 0.9773650691554725,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.17299575039941284,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.17299575039941284,
+    "fees_paid": 21.731709193207315,
+    "slippage_paid": 10.86629523548044,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": 0.004797900632746608,
+    "p05": -0.2268105083521544,
+    "p95": 0.26654295380932136,
+    "mean_expectancy": 0.0006085999440063953
+   },
+   "percentile_vs_random": 60.0,
+   "params": {
+    "fast": 50,
+    "slow": 200,
+    "q": 0.9
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": 0.35059537917880035,
+    "max_drawdown": -0.3509287022427935,
+    "sharpe": 0.5742679160905106,
+    "n_trades": 136,
+    "win_rate": 0.40441176470588236,
+    "avg_win": 0.03500244523705229,
+    "avg_loss": -0.018944265478275886,
+    "profit_factor": 1.146381294940545,
+    "expectancy_per_trade": 0.002872419002187715,
+    "fees_paid": 4209.671385519058,
+    "slippage_paid": 2104.838147875147,
+    "time_in_market": 0.47165532879818595
+   }
+  },
+  "ma_trend|ETHUSDT": {
+   "metrics": {
+    "net_return": -0.05887977809079947,
+    "max_drawdown": -0.3658773535873122,
+    "sharpe": -0.09885134955412984,
+    "n_trades": 26,
+    "win_rate": 0.3076923076923077,
+    "avg_win": 0.061401449793430485,
+    "avg_loss": -0.02790945338508903,
+    "profit_factor": 0.8635485322018058,
+    "expectancy_per_trade": -0.00042917548400610403,
+    "fees_paid": 427.499451608522,
+    "slippage_paid": 213.74973891709038,
+    "time_in_market": 0.5389492753623188
+   },
+   "buy_hold": {
+    "net_return": 0.2535261360716292,
+    "max_drawdown": -0.3788765145025089,
+    "sharpe": 1.0978391632791653,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.2535261360716291,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.2535261360716291,
+    "fees_paid": 22.53781915989617,
+    "slippage_paid": 11.2695518471297,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": 0.07501437793539945,
+    "p05": -0.22005549630127783,
+    "p95": 0.4085742967823677,
+    "mean_expectancy": 0.004003983157044957
+   },
+   "percentile_vs_random": 26.0,
+   "params": {
+    "fast": 50,
+    "slow": 100
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": 0.28409298475926215,
+    "max_drawdown": -0.6027493105305348,
+    "sharpe": 0.4548787650132819,
+    "n_trades": 121,
+    "win_rate": 0.38016528925619836,
+    "avg_win": 0.07209872950070116,
+    "avg_loss": -0.036222786620037604,
+    "profit_factor": 1.0698484162250936,
+    "expectancy_per_trade": 0.004957293888672997,
+    "fees_paid": 3510.559301184756,
+    "slippage_paid": 1755.2816772848971,
+    "time_in_market": 0.5286281179138322
+   }
+  },
+  "breakout|ETHUSDT": {
+   "metrics": {
+    "net_return": -0.060149756411674415,
+    "max_drawdown": -0.23010920540822366,
+    "sharpe": -0.46565930233123753,
+    "n_trades": 10,
+    "win_rate": 0.3,
+    "avg_win": 0.07288103662537691,
+    "avg_loss": -0.036689733488547774,
+    "profit_factor": 0.7415835312663274,
+    "expectancy_per_trade": -0.0038185024543703704,
+    "fees_paid": 174.83570900444596,
+    "slippage_paid": 87.41776969119378,
+    "time_in_market": 0.10031702898550725
+   },
+   "buy_hold": {
+    "net_return": 0.2535261360716292,
+    "max_drawdown": -0.3788765145025089,
+    "sharpe": 1.0978391632791653,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.2535261360716291,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.2535261360716291,
+    "fees_paid": 22.53781915989617,
+    "slippage_paid": 11.2695518471297,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": 0.0013513884122796959,
+    "p05": -0.16945944566356547,
+    "p95": 0.18280860644009542,
+    "mean_expectancy": 0.0002680336161826742
+   },
+   "percentile_vs_random": 28.499999999999996,
+   "params": {
+    "entry_n": 336,
+    "exit_n": 24
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": 0.8354087301674793,
+    "max_drawdown": -0.28440594857016654,
+    "sharpe": 1.1253339754075293,
+    "n_trades": 48,
+    "win_rate": 0.4375,
+    "avg_win": 0.07216742621187763,
+    "avg_loss": -0.02948405294306565,
+    "profit_factor": 1.6814744572894536,
+    "expectancy_per_trade": 0.014988469187222036,
+    "fees_paid": 1396.47105211323,
+    "slippage_paid": 698.2381382556696,
+    "time_in_market": 0.16392668178382463
+   }
+  },
+  "rsi_reversion|ETHUSDT": {
+   "metrics": {
+    "net_return": -0.1450359954176993,
+    "max_drawdown": -0.21131200321061616,
+    "sharpe": -1.3433708079575795,
+    "n_trades": 4,
+    "win_rate": 0.5,
+    "avg_win": 0.016022830108336623,
+    "avg_loss": -0.08847256639519668,
+    "profit_factor": 0.18204739544959822,
+    "expectancy_per_trade": -0.03622486814343003,
+    "fees_paid": 77.36472971034225,
+    "slippage_paid": 38.68203127686801,
+    "time_in_market": 0.06884057971014493
+   },
+   "buy_hold": {
+    "net_return": 0.2535261360716292,
+    "max_drawdown": -0.3788765145025089,
+    "sharpe": 1.0978391632791653,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.2535261360716291,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.2535261360716291,
+    "fees_paid": 22.53781915989617,
+    "slippage_paid": 11.2695518471297,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": 0.010440185581715793,
+    "p05": -0.14888672372866132,
+    "p95": 0.26021544639047306,
+    "mean_expectancy": 0.0028386970100096973
+   },
+   "percentile_vs_random": 5.5,
+   "params": {
+    "n": 14,
+    "entry": 20,
+    "exit": 60
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": -0.0988984079786367,
+    "max_drawdown": -0.39982985909031,
+    "sharpe": 0.002250041293554373,
+    "n_trades": 36,
+    "win_rate": 0.5833333333333334,
+    "avg_win": 0.03196376015480256,
+    "avg_loss": -0.04833042910304704,
+    "profit_factor": 0.8546167747151262,
+    "expectancy_per_trade": -0.001492152035968114,
+    "fees_paid": 664.3808948054667,
+    "slippage_paid": 332.1904492995163,
+    "time_in_market": 0.10449735449735449
+   }
+  },
+  "bollinger_reversion|ETHUSDT": {
+   "metrics": {
+    "net_return": -0.19314001250724888,
+    "max_drawdown": -0.2791858985722714,
+    "sharpe": -1.4302417352483923,
+    "n_trades": 23,
+    "win_rate": 0.5652173913043478,
+    "avg_win": 0.013727549745434662,
+    "avg_loss": -0.03700137642973852,
+    "profit_factor": 0.44710747242844373,
+    "expectancy_per_trade": -0.008328505113336286,
+    "fees_paid": 409.9444675411712,
+    "slippage_paid": 204.97190464962028,
+    "time_in_market": 0.21535326086956522
+   },
+   "buy_hold": {
+    "net_return": 0.2535261360716292,
+    "max_drawdown": -0.3788765145025089,
+    "sharpe": 1.0978391632791653,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.2535261360716291,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.2535261360716291,
+    "fees_paid": 22.53781915989617,
+    "slippage_paid": 11.2695518471297,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": -0.006094957399335701,
+    "p05": -0.2689845061808914,
+    "p95": 0.26007267959541785,
+    "mean_expectancy": -2.1606147974824982e-05
+   },
+   "percentile_vs_random": 11.5,
+   "params": {
+    "n": 50,
+    "k": 2.5
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": -0.43505453653722004,
+    "max_drawdown": -0.6052930972849442,
+    "sharpe": -0.41450009819930783,
+    "n_trades": 138,
+    "win_rate": 0.6376811594202898,
+    "avg_win": 0.02128209910822949,
+    "avg_loss": -0.046097877250256776,
+    "profit_factor": 0.7590952735138236,
+    "expectancy_per_trade": -0.003130935804265534,
+    "fees_paid": 2139.957669138815,
+    "slippage_paid": 1069.978549417007,
+    "time_in_market": 0.22014361300075586
+   }
+  },
+  "vol_filtered_trend|ETHUSDT": {
+   "metrics": {
+    "net_return": 0.10451079225369186,
+    "max_drawdown": -0.2000313479428717,
+    "sharpe": 0.7234608363580981,
+    "n_trades": 21,
+    "win_rate": 0.42857142857142855,
+    "avg_win": 0.047820830396775225,
+    "avg_loss": -0.0259542207322593,
+    "profit_factor": 1.3250666737205343,
+    "expectancy_per_trade": 0.005663658323041211,
+    "fees_paid": 428.9704571220878,
+    "slippage_paid": 214.48565070202756,
+    "time_in_market": 0.4846014492753623
+   },
+   "buy_hold": {
+    "net_return": 0.2535261360716292,
+    "max_drawdown": -0.3788765145025089,
+    "sharpe": 1.0978391632791653,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.2535261360716291,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.2535261360716291,
+    "fees_paid": 22.53781915989617,
+    "slippage_paid": 11.2695518471297,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": 0.06738921073685157,
+    "p05": -0.2568527424298855,
+    "p95": 0.45006253433305954,
+    "mean_expectancy": 0.004187500996826794
+   },
+   "percentile_vs_random": 56.99999999999999,
+   "params": {
+    "fast": 50,
+    "slow": 200,
+    "q": 0.9
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": -0.3293534558843645,
+    "max_drawdown": -0.5711185654362874,
+    "sharpe": -0.22521174440687497,
+    "n_trades": 138,
+    "win_rate": 0.4057971014492754,
+    "avg_win": 0.049681866692020196,
+    "avg_loss": -0.03590874135384863,
+    "profit_factor": 0.8850344482763826,
+    "expectancy_per_trade": -0.0011763206975540323,
+    "fees_paid": 2702.2851241383205,
+    "slippage_paid": 1351.1427520423367,
+    "time_in_market": 0.4393896447467876
+   }
+  },
+  "ma_trend|SOLUSDT": {
+   "metrics": {
+    "net_return": 0.25824465015645215,
+    "max_drawdown": -0.2163058714927637,
+    "sharpe": 1.31005984635847,
+    "n_trades": 18,
+    "win_rate": 0.5,
+    "avg_win": 0.06632196938950556,
+    "avg_loss": -0.03387099240585013,
+    "profit_factor": 1.8530082849245229,
+    "expectancy_per_trade": 0.016225488491827717,
+    "fees_paid": 351.08808989945766,
+    "slippage_paid": 175.5448222195645,
+    "time_in_market": 0.49796195652173914
+   },
+   "buy_hold": {
+    "net_return": 0.2105476346549735,
+    "max_drawdown": -0.3799775944597209,
+    "sharpe": 0.9408801067169966,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.21054763465497345,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.21054763465497345,
+    "fees_paid": 22.107603930500215,
+    "slippage_paid": 11.05433662482174,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": 0.04174026586100336,
+    "p05": -0.28078270354749013,
+    "p95": 0.38070824482753535,
+    "mean_expectancy": 0.003680801894270213
+   },
+   "percentile_vs_random": 84.5,
+   "params": {
+    "fast": 50,
+    "slow": 200
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": 2.9859911690181833,
+    "max_drawdown": -0.4485061363920133,
+    "sharpe": 1.2061395954219372,
+    "n_trades": 63,
+    "win_rate": 0.3492063492063492,
+    "avg_win": 0.2128077880977961,
+    "avg_loss": -0.053948194658555104,
+    "profit_factor": 1.2968819018529991,
+    "expectancy_per_trade": 0.03920468820874214,
+    "fees_paid": 5470.781118290921,
+    "slippage_paid": 2735.4000756683454,
+    "time_in_market": 0.502598261526833
+   }
+  },
+  "breakout|SOLUSDT": {
+   "metrics": {
+    "net_return": 0.14006443271053803,
+    "max_drawdown": -0.18897759928562097,
+    "sharpe": 1.0610377196424203,
+    "n_trades": 12,
+    "win_rate": 0.4166666666666667,
+    "avg_win": 0.09114983839559013,
+    "avg_loss": -0.039638091706340375,
+    "profit_factor": 1.5536370669105182,
+    "expectancy_per_trade": 0.014856879169464,
+    "fees_paid": 213.07793458114887,
+    "slippage_paid": 106.53939735597622,
+    "time_in_market": 0.1877264492753623
+   },
+   "buy_hold": {
+    "net_return": 0.2105476346549735,
+    "max_drawdown": -0.3799775944597209,
+    "sharpe": 0.9408801067169966,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.21054763465497345,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.21054763465497345,
+    "fees_paid": 22.107603930500215,
+    "slippage_paid": 11.05433662482174,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": 0.025439606647696206,
+    "p05": -0.2078480634429451,
+    "p95": 0.32766394782369823,
+    "mean_expectancy": 0.00255554124964402
+   },
+   "percentile_vs_random": 79.0,
+   "params": {
+    "entry_n": 168,
+    "exit_n": 24
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": 1.7635225007411277,
+    "max_drawdown": -0.3074923087833421,
+    "sharpe": 1.1581748311616489,
+    "n_trades": 68,
+    "win_rate": 0.47058823529411764,
+    "avg_win": 0.08233851384941562,
+    "avg_loss": -0.03844824739621832,
+    "profit_factor": 1.467409218015138,
+    "expectancy_per_trade": 0.01839258142525648,
+    "fees_paid": 3561.1122292799705,
+    "slippage_paid": 1780.5618588645675,
+    "time_in_market": 0.20153061224489796
+   }
+  },
+  "rsi_reversion|SOLUSDT": {
+   "metrics": {
+    "net_return": -0.12022704653312433,
+    "max_drawdown": -0.26500060364602185,
+    "sharpe": -0.6101796681693549,
+    "n_trades": 25,
+    "win_rate": 0.64,
+    "avg_win": 0.0164256911088467,
+    "avg_loss": -0.03996648953856899,
+    "profit_factor": 0.6668267877033991,
+    "expectancy_per_trade": -0.0038754939242229476,
+    "fees_paid": 462.53336499032446,
+    "slippage_paid": 231.26655537750494,
+    "time_in_market": 0.28306159420289856
+   },
+   "buy_hold": {
+    "net_return": 0.2105476346549735,
+    "max_drawdown": -0.3799775944597209,
+    "sharpe": 0.9408801067169966,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.21054763465497345,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.21054763465497345,
+    "fees_paid": 22.107603930500215,
+    "slippage_paid": 11.05433662482174,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": -0.002978565855137114,
+    "p05": -0.2839708113603926,
+    "p95": 0.3368344276449867,
+    "mean_expectancy": 0.00018285642000162355
+   },
+   "percentile_vs_random": 24.5,
+   "params": {
+    "n": 14,
+    "entry": 30,
+    "exit": 60
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": 0.15436476258794607,
+    "max_drawdown": -0.555129117627236,
+    "sharpe": 0.37126058616689833,
+    "n_trades": 110,
+    "win_rate": 0.6636363636363637,
+    "avg_win": 0.035953694581058196,
+    "avg_loss": -0.06220255800558255,
+    "profit_factor": 1.0428404194794652,
+    "expectancy_per_trade": 0.0029375005291881217,
+    "fees_paid": 3280.5124244569447,
+    "slippage_paid": 1640.2578283327462,
+    "time_in_market": 0.24442554799697658
+   }
+  },
+  "bollinger_reversion|SOLUSDT": {
+   "metrics": {
+    "net_return": -0.08074025385979222,
+    "max_drawdown": -0.27978342052216476,
+    "sharpe": -0.43076425280725655,
+    "n_trades": 28,
+    "win_rate": 0.75,
+    "avg_win": 0.015938410821388426,
+    "avg_loss": -0.05508880294060311,
+    "profit_factor": 0.7888313477714652,
+    "expectancy_per_trade": -0.0018183926191094571,
+    "fees_paid": 521.6282328622721,
+    "slippage_paid": 260.81411019106343,
+    "time_in_market": 0.21195652173913043
+   },
+   "buy_hold": {
+    "net_return": 0.2105476346549735,
+    "max_drawdown": -0.3799775944597209,
+    "sharpe": 0.9408801067169966,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.21054763465497345,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.21054763465497345,
+    "fees_paid": 22.107603930500215,
+    "slippage_paid": 11.05433662482174,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": -0.011648055851838472,
+    "p05": -0.2616885394593571,
+    "p95": 0.3056429630160454,
+    "mean_expectancy": -0.00030996646216516135
+   },
+   "percentile_vs_random": 38.5,
+   "params": {
+    "n": 50,
+    "k": 2.5
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": 0.14793440012609538,
+    "max_drawdown": -0.5370472349579856,
+    "sharpe": 0.35701943429954314,
+    "n_trades": 134,
+    "win_rate": 0.6716417910447762,
+    "avg_win": 0.02901311100360721,
+    "avg_loss": -0.05252745493561313,
+    "profit_factor": 1.0407492501529487,
+    "expectancy_per_trade": 0.002238596814609484,
+    "fees_paid": 3983.398196665432,
+    "slippage_paid": 1991.700961943284,
+    "time_in_market": 0.20535714285714285
+   }
+  },
+  "vol_filtered_trend|SOLUSDT": {
+   "metrics": {
+    "net_return": 0.02664889814346849,
+    "max_drawdown": -0.26534964516893855,
+    "sharpe": 0.32685423711979994,
+    "n_trades": 31,
+    "win_rate": 0.45161290322580644,
+    "avg_win": 0.04334187045522026,
+    "avg_loss": -0.032068477324462843,
+    "profit_factor": 1.0510577421549336,
+    "expectancy_per_trade": 0.0019878087695875905,
+    "fees_paid": 577.3211486353584,
+    "slippage_paid": 288.6608574353974,
+    "time_in_market": 0.4601449275362319
+   },
+   "buy_hold": {
+    "net_return": 0.2105476346549735,
+    "max_drawdown": -0.3799775944597209,
+    "sharpe": 0.9408801067169966,
+    "n_trades": 1,
+    "win_rate": 1.0,
+    "avg_win": 0.21054763465497345,
+    "avg_loss": NaN,
+    "profit_factor": Infinity,
+    "expectancy_per_trade": 0.21054763465497345,
+    "fees_paid": 22.107603930500215,
+    "slippage_paid": 11.05433662482174,
+    "time_in_market": 0.9997735507246377
+   },
+   "random": {
+    "mean_return": 0.01794167426419025,
+    "p05": -0.26226225196917846,
+    "p95": 0.3515219629065618,
+    "mean_expectancy": 0.0013402609210243
+   },
+   "percentile_vs_random": 54.0,
+   "params": {
+    "fast": 50,
+    "slow": 200,
+    "q": 0.9
+   },
+   "pre_lockbox_in_sample": {
+    "net_return": 1.3665872442955949,
+    "max_drawdown": -0.4417721735704009,
+    "sharpe": 0.9244694641311165,
+    "n_trades": 124,
+    "win_rate": 0.4596774193548387,
+    "avg_win": 0.06998771625855445,
+    "avg_loss": -0.04166056069583301,
+    "profit_factor": 1.1891079035269085,
+    "expectancy_per_trade": 0.009661631129974133,
+    "fees_paid": 6071.694375143825,
+    "slippage_paid": 3035.852880926464,
+    "time_in_market": 0.436885865457294
+   }
+  }
+ },
+ "period_end": "2026-09-01 00:00:00+00:00"
+}

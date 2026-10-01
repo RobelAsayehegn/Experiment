@@ -14,6 +14,28 @@ PCT = lambda x: "n/a" if x is None or pd.isna(x) else f"{x:+.1%}"  # noqa: E731
 PCT2 = lambda x: "n/a" if x is None or pd.isna(x) else f"{x:+.2%}"  # noqa: E731
 
 
+VERDICT_TEXT = """**No edge found.** On unseen data, after 0.30% round-trip costs, none of the five simple strategies
+(MA trend, breakout, RSI reversion, Bollinger reversion, vol-filtered trend) on BTC, ETH or SOL hourly candles
+showed a reliable positive expectancy.
+
+- **Walk-forward (Oct 2024 to Feb 2026):** 13 of 15 strategy/coin cells lost money. The two winners (RSI on BTC, breakout on ETH)
+  made +6.5% and +16% on only 18 and 19 trades and did not beat 95% of random-entry runs; with 15 cells tested, a couple of
+  such results are expected by chance. Bollinger mean reversion was the worst (high win rate ~60%, but losses larger than wins and heavy fees),
+  a clear example that win rate does not equal profit.
+- **Lockbox (Mar to Aug 2026, one look):** 0 of 15 cells passed. The market rose (buy-and-hold +17% BTC, +25% ETH, +21% SOL) and
+  almost every strategy trailed it. The best, MA trend on SOL (+25.8%), beat only 84% of random runs on 18 trades, and the same strategy
+  lost money on BTC and ETH. Breakout won on BTC and SOL but lost on ETH, and it had been the one 'winner' in walk-forward on ETH.
+  Results flip sign across coins and periods, which is what noise looks like.
+- **Confidence:** moderate-to-high that these specific simple rules have no exploitable edge on this data after costs; low confidence
+  that *nothing* works. Costs of 0.30% per round trip consume a large share of a typical hourly move (median |1h move| is 0.2-0.4%).
+- **Main risks and limits:** only 5 strategies, tiny grids, long-only, hourly bars only (5m was downloaded and explored but not backtested; costs are even
+  harder to beat there); 35 months is a single market cycle; trade counts per cell are small (5-110), so individual cells are statistically weak;
+  slippage is a flat 0.05% assumption, not a measured one; no funding/borrowing, taxes or partial fills.
+- **Bottom line:** no justification for live or testnet trading on the basis of this evidence. Any next step should be a new,
+  pre-registered hypothesis (for example a different timeframe, cross-sectional or market-neutral ideas), not more tuning of these rules,
+  because the lockbox has now been used."""
+
+
 def table(rows: list[dict]) -> str:
     df = pd.DataFrame(rows)
     head = "| " + " | ".join(df.columns) + " |\n|" + "|".join("---" for _ in df.columns) + "|\n"
@@ -119,7 +141,7 @@ def main() -> None:
     if lock:
         gl, nl = edge_verdict(lock["results"])
         L += [f"- Lockbox: **{gl} of {nl}** cells pass."]
-    L += ["", "_(Hand-written interpretation is appended below by the researcher.)_", ""]
+    L += ["", VERDICT_TEXT, ""]
     (OUT / "REPORT.md").write_text("\n".join(L), encoding="utf-8")
     print("wrote reports/REPORT.md")
 
