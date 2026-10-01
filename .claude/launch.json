@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dashboard",
+      "runtimeExecutable": "D:\\VITE\\Code\\crypto-research\\.venv\\Scripts\\python.exe",
+      "runtimeArgs": ["-m", "http.server", "8765", "--directory", "dashboard", "--bind", "127.0.0.1"],
+      "port": 8765
+    }
+  ]
+}

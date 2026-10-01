@@ -36,3 +36,24 @@ def hold_between(enter: np.ndarray, exit_: np.ndarray) -> np.ndarray:
             state = 1.0
         pos[i] = state
     return pos
+
+
+def hold_long_short(enter_long, exit_long, enter_short, exit_short) -> np.ndarray:
+    """Stateful -1/0/+1 position. Exits are checked before entries, so a long can flip to a short
+    (exit then short entry on the same bar). NaN conditions count as False."""
+    el, xl, es, xs = (np.nan_to_num(np.asarray(a, dtype=float)).astype(bool)
+                      for a in (enter_long, exit_long, enter_short, exit_short))
+    pos = np.zeros(len(el))
+    state = 0.0
+    for i in range(len(el)):
+        if state == 1.0 and xl[i]:
+            state = 0.0
+        elif state == -1.0 and xs[i]:
+            state = 0.0
+        if state == 0.0:
+            if el[i]:
+                state = 1.0
+            elif es[i]:
+                state = -1.0
+        pos[i] = state
+    return pos

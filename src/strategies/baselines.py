@@ -9,8 +9,9 @@ def buy_and_hold(df) -> np.ndarray:
     return np.ones(len(df))
 
 
-def random_entries(n_bars: int, n_trades: int, avg_hold: float, rng: np.random.Generator) -> np.ndarray:
-    """Random long-only weights with `n_trades` round trips of roughly `avg_hold` bars each.
+def random_entries(n_bars: int, n_trades: int, avg_hold: float, rng: np.random.Generator,
+                   two_sided: bool = False) -> np.ndarray:
+    """Random weights (long-only, or random long/short sides if `two_sided`) with `n_trades` round trips of roughly `avg_hold` bars each.
 
     Hold lengths are exponential around `avg_hold`; trades are placed at random, non-overlapping
     start points. Used to ask: does the strategy beat luck with the same turnover?
@@ -33,7 +34,7 @@ def random_entries(n_bars: int, n_trades: int, avg_hold: float, rng: np.random.G
     for h, g in zip(holds, gaps):
         pos += int(g)
         end = min(n_bars, pos + int(h))
-        w[pos:end] = 1.0
+        w[pos:end] = rng.choice([-1.0, 1.0]) if two_sided else 1.0
         pos = end + 1  # flat bar between trades so they stay distinct
         if pos >= n_bars:
             break

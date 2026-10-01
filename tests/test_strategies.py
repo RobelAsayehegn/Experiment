@@ -36,7 +36,7 @@ def test_strategy_weights_valid(name):
     for params in grid:
         w = np.asarray(fn(df, **params))
         assert len(w) == len(df)
-        assert set(np.unique(w)) <= {0.0, 1.0}
+        assert set(np.unique(w)) <= ({-1.0, 0.0, 1.0} if name.endswith("_ls") else {0.0, 1.0})
 
 
 def test_random_entries_shape():
@@ -45,3 +45,10 @@ def test_random_entries_shape():
     assert len(w) == 5000 and set(np.unique(w)) <= {0.0, 1.0}
     starts = ((w[1:] == 1) & (w[:-1] == 0)).sum() + int(w[0] == 1)
     assert 30 <= starts <= 40
+
+
+@pytest.mark.parametrize("name", [n for n in STRATEGIES if n.endswith("_ls")])
+def test_ls_variant_goes_both_ways(name):
+    fn, grid = STRATEGIES[name]
+    w = np.asarray(fn(synthetic(6000, seed=2), **grid[0]))
+    assert (w < 0).any() and (w > 0).any()

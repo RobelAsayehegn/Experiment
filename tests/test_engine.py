@@ -110,3 +110,80 @@ def test_metrics_basic():
     assert m["net_return"] == pytest.approx(0.10)
     assert m["expectancy_per_trade"] == pytest.approx(0.10)
     assert m["max_drawdown"] == pytest.approx(0.0)
+
+
+# ---------- short side ----------
+
+def test_short_profits_when_price_falls():
+    df = make_df([100, 100, 50, 50, 50])
+    res = run_backtest(df, np.array([-1, -1, 0, 0, 0]), fee=0, slippage=0, short_cost_per_hour=0)
+    assert res.equity.iloc[-1] == pytest.approx(15_000)   # short 100 units at 100, cover at 50
+    assert res.trades["side"].iloc[0] == "short"
+
+
+def test_short_loses_when_price_rises():
+    df = make_df([100, 100, 110, 110, 110])
+    res = run_backtest(df, np.array([-1, -1, 0, 0, 0]), fee=0, slippage=0, short_cost_per_hour=0)
+    assert res.equity.iloc[-1] == pytest.approx(9_000)
+
+
+def test_short_round_trip_flat_price_loses_exactly_costs():
+    fee, slip = 0.001, 0.0005
+    df = make_df([100] * 6)
+    res = run_backtest(df, np.array([-1, -1, 0, 0, 0, 0]), fee=fee, slippage=slip, short_cost_per_hour=0)
+    expected = 10_000 + 10_000 * ((1 - slip) * (1 - fee) - (1 + slip) * (1 + fee))
+    assert res.equity.iloc[-1] == pytest.approx(expected, rel=1e-9)
+    assert len(res.trades) == 1
+
+
+def test_short_holding_cost_is_charged():
+    df = make_df([100] * 12)
+    w = np.array([-1] * 11 + [0])
+    free = run_backtest(df, w, fee=0, slippage=0, short_cost_per_hour=0)
+    paid = run_backtest(df, w, fee=0, slippage=0, short_cost_per_hour=0.0001)
+    assert paid.financing_paid > 0 and free.financing_paid == 0
+    assert paid.equity.iloc[-1] == pytest.approx(free.equity.iloc[-1] - paid.financing_paid, rel=1e-9)
+    # long positions never pay it
+    longp = run_backtest(df, np.ones(12), fee=0, slippage=0, short_cost_per_hour=0.01)
+    assert longp.financing_paid == 0
+
+
+def test_flip_long_to_short_pays_both_legs_and_makes_two_trades():
+    df = make_df([100] * 8)
+    w = np.array([1, 1, 1, -1, -1, -1, 0, 0])   # signal bar2 flips: open of bar3 sell + short
+    res = run_backtest(df, w, fee=0.001, slippage=0, short_cost_per_hour=0)
+    assert len(res.trades) == 2
+    assert list(res.trades["side"]) == ["long", "short"]
+    # flipping trades ~2x notional at the flip bar, so fees are well above 3 single-leg trades of 1x
+    assert res.fees_paid > 10_000 * 0.001 * 3.5
+
+
+def test_short_no_lookahead():
+    rng = np.random.default_rng(3)
+    opens = 100 + rng.normal(0, 1, 200).cumsum() + 50
+    closes = opens + rng.normal(0, 0.3, 200)
+    w = rng.choice([-1.0, 0.0, 1.0], 200)
+    base = run_backtest(make_df(opens, closes), w).equity.to_numpy()
+    k = 120
+    o2, c2, w2 = opens.copy(), closes.copy(), w.copy()
+    o2[k:] *= 2; c2[k:] *= 2; w2[k:] = -w2[k:]
+    alt = run_backtest(make_df(o2, c2), w2).equity.to_numpy()
+    assert np.allclose(base[:k], alt[:k])
+
+
+def test_long_short_accounting_identity():
+    rng = np.random.default_rng(4)
+    opens = 100 + rng.normal(0, 0.5, 600).cumsum() + 80
+    closes = opens + rng.normal(0, 0.2, 600)
+    w = rng.choice([-1.0, -0.5, 0.0, 0.5, 1.0], 600)
+    res = run_backtest(make_df(opens, closes), w)
+    assert (res.equity > 0).all()
+    assert res.position.abs().max() <= 1.05      # no leverage beyond cost rounding
+    assert res.trades["pnl"].sum() == pytest.approx(res.equity.iloc[-1] - 10_000, rel=1e-8)
+
+
+def test_short_wipeout_never_goes_negative():
+    df = make_df([100, 100, 150, 300, 300, 300])
+    res = run_backtest(df, np.array([-1, -1, -1, -1, -1, -1]), fee=0, slippage=0, short_cost_per_hour=0)
+    assert (res.equity >= 0).all()
+    assert res.equity.iloc[-1] == 0.0

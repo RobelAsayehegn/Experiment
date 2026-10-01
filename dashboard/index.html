@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crypto Research Lab - Results</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>Crypto Research Lab</h1>
+    <p class="sub">Does any simple strategy beat the market on Binance data <em>after fees and slippage</em>? Research only: no orders, no API keys.</p>
+  </div>
+  <div class="gen" id="gen"></div>
+</header>
+
+<main>
+  <section id="verdict" class="verdict"></section>
+
+  <section class="controls">
+    <label>Timeframe
+      <select id="f-interval"></select></label>
+    <label>Coin
+      <select id="f-coin"></select></label>
+    <label>Direction
+      <select id="f-dir">
+        <option value="all">Long-only and Long/Short</option>
+        <option value="long">Long-only</option>
+        <option value="ls">Long/Short</option>
+      </select></label>
+    <span class="hint" id="period-hint"></span>
+  </section>
+
+  <section class="cards" id="cards"></section>
+
+  <section>
+    <h2>1. Scoreboard: how each strategy did on unseen data</h2>
+    <p class="note">Walk-forward test: parameters are re-chosen on past data only, then traded on the next 3 months they never saw. All numbers are net of fees and slippage. Click a row for details.</p>
+    <div class="tablewrap"><table id="board"></table></div>
+  </section>
+
+  <section id="detail"></section>
+
+  <section>
+    <h2>3. What the market looks like versus trading costs</h2>
+    <p class="note">A round trip costs about 0.30% (fee 0.10% + slippage 0.05% on each side). A strategy must make more than that on average, every trade, before it earns a cent.</p>
+    <div class="imgs" id="imgs"></div>
+  </section>
+
+  <section>
+    <h2>4. How to read this, and what is not covered</h2>
+    <ul class="notes" id="notes"></ul>
+  </section>
+</main>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -8,7 +8,7 @@ import pandas as pd
 
 from .download import INTERVALS, PARQUET_DIR, RAW_DIR, SYMBOLS, read_zip
 
-STEP = {"5m": pd.Timedelta(minutes=5), "1h": pd.Timedelta(hours=1)}
+STEP = {"5m": pd.Timedelta(minutes=5), "1h": pd.Timedelta(hours=1), "4h": pd.Timedelta(hours=4)}
 
 
 def load(symbol: str, interval: str) -> pd.DataFrame:

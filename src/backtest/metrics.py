@@ -32,5 +32,8 @@ def compute_metrics(res: Result) -> dict:
         "expectancy_per_trade": float(t["ret"].mean()) if n else float("nan"),  # net of costs
         "fees_paid": float(res.fees_paid),
         "slippage_paid": float(res.slippage_paid),
-        "time_in_market": float((res.position > 0).mean()),
+        "financing_paid": float(res.financing_paid),
+        "n_long": int((t["side"] == "long").sum()) if n else 0,
+        "n_short": int((t["side"] == "short").sum()) if n else 0,
+        "time_in_market": float((res.position != 0).mean()),
     }

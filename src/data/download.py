@@ -19,7 +19,7 @@ import requests
 
 BASE_URL = "https://data.binance.vision/data/spot/monthly/klines"
 SYMBOLS = ["BTCUSDT", "ETHUSDT", "SOLUSDT"]
-INTERVALS = ["5m", "1h"]
+INTERVALS = ["5m", "1h", "4h"]
 ROOT = Path(__file__).resolve().parents[2]
 RAW_DIR = ROOT / "data" / "raw"
 PARQUET_DIR = ROOT / "data" / "parquet"
@@ -109,10 +109,11 @@ def merge_to_parquet(symbol: str, interval: str) -> Path:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--months", type=int, default=36)
+    ap.add_argument("--intervals", nargs="+", default=INTERVALS)
     args = ap.parse_args()
 
     months = month_range(args.months)
-    jobs = [(s, i, m) for s in SYMBOLS for i in INTERVALS for m in months]
+    jobs = [(s, i, m) for s in SYMBOLS for i in args.intervals for m in months]
     print(f"{len(jobs)} files: {months[0]} .. {months[-1]}")
 
     session = requests.Session()
@@ -137,7 +138,7 @@ def main() -> None:
             print("  ", p)
 
     for s in SYMBOLS:
-        for i in INTERVALS:
+        for i in args.intervals:
             print("merged ->", merge_to_parquet(s, i))
 
 

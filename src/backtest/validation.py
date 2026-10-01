@@ -19,7 +19,7 @@ from src.backtest.metrics import compute_metrics
 from src.strategies.baselines import buy_and_hold, random_entries
 from src.strategies.registry import STRATEGIES
 
-BARS_PER_YEAR = 365 * 24
+BARS_PER_YEAR = {"1h": 365 * 24, "4h": 365 * 6}
 TS = lambda s: pd.Timestamp(s, tz="UTC")  # noqa: E731
 
 TRAIN_START = TS("2023-10-01")
@@ -38,6 +38,7 @@ class Asset:
     symbol: str
     df: pd.DataFrame
     weight_cache: dict
+    interval: str = "1h"
 
     def weights(self, strat: str, params: dict) -> np.ndarray:
         key = (strat, tuple(sorted(params.items())))
@@ -52,12 +53,12 @@ class Asset:
 
     def run(self, w: np.ndarray, start, end) -> Result:
         m = self.mask(start, end)
-        return run_backtest(self.df.loc[m].reset_index(drop=True), w[m], bars_per_year=BARS_PER_YEAR)
+        return run_backtest(self.df.loc[m].reset_index(drop=True), w[m], bars_per_year=BARS_PER_YEAR[self.interval])
 
 
 def chain(results: list[Result]) -> Result:
     """Stitch consecutive fold results into one compounding result (each fold starts flat)."""
-    cap, eqs, trades, poss, fees, slip = 1.0, [], [], [], 0.0, 0.0
+    cap, eqs, trades, poss, fees, slip, fin = 1.0, [], [], [], 0.0, 0.0, 0.0
     init = results[0].initial_capital
     for r in results:
         eqs.append(r.equity * cap)
@@ -68,9 +69,10 @@ def chain(results: list[Result]) -> Result:
         poss.append(r.position)
         fees += r.fees_paid * cap
         slip += r.slippage_paid * cap
+        fin += r.financing_paid * cap
         cap = float(eqs[-1].iloc[-1] / init)
     tr = pd.concat([t for t in trades if len(t)], ignore_index=True) if any(len(t) for t in trades) else trades[0]
-    return Result(pd.concat(eqs), tr, fees, slip, init, results[0].bars_per_year, pd.concat(poss))
+    return Result(pd.concat(eqs), tr, fees, slip, init, results[0].bars_per_year, pd.concat(poss), fin)
 
 
 def select_params(asset: Asset, strat: str, start, end) -> tuple[dict, dict]:
@@ -85,14 +87,15 @@ def select_params(asset: Asset, strat: str, start, end) -> tuple[dict, dict]:
     return best, best_m
 
 
-def random_baseline(asset: Asset, start, end, n_trades: int, avg_hold: float, n_sims: int = 200, seed: int = 0) -> dict:
+def random_baseline(asset: Asset, start, end, n_trades: int, avg_hold: float, n_sims: int = 200, seed: int = 0,
+                    two_sided: bool = False) -> dict:
     rng = np.random.default_rng(seed)
     m = asset.mask(start, end)
     sub = asset.df.loc[m].reset_index(drop=True)
     rets, exps = [], []
     for _ in range(n_sims):
-        w = random_entries(len(sub), n_trades, avg_hold, rng)
-        met = compute_metrics(run_backtest(sub, w, bars_per_year=BARS_PER_YEAR))
+        w = random_entries(len(sub), n_trades, avg_hold, rng, two_sided=two_sided)
+        met = compute_metrics(run_backtest(sub, w, bars_per_year=BARS_PER_YEAR[asset.interval]))
         rets.append(met["net_return"])
         exps.append(met["expectancy_per_trade"])
     rets = np.array(rets)
@@ -103,7 +106,7 @@ def random_baseline(asset: Asset, start, end, n_trades: int, avg_hold: float, n_
 
 def avg_hold_bars(res: Result) -> float:
     n = len(res.trades)
-    return float((res.position > 0).sum() / n) if n else 1.0
+    return float((res.position != 0).sum() / n) if n else 1.0
 
 
 def evaluate_period(asset: Asset, strat: str, params: dict, start, end, n_sims: int = 200) -> dict:
@@ -111,7 +114,7 @@ def evaluate_period(asset: Asset, strat: str, params: dict, start, end, n_sims: 
     res = run_backtest_slice(asset, strat, params, start, end)
     met = compute_metrics(res)
     bh = compute_metrics(asset.run(buy_and_hold(asset.df), start, end))
-    rnd = random_baseline(asset, start, end, met["n_trades"], avg_hold_bars(res), n_sims)
+    rnd = random_baseline(asset, start, end, met["n_trades"], avg_hold_bars(res), n_sims, two_sided=strat.endswith("_ls"))
     pct = float((np.array(rnd["returns"]) < met["net_return"]).mean() * 100)
     return {"metrics": met, "buy_hold": bh, "random": {k: v for k, v in rnd.items() if k != "returns"},
             "percentile_vs_random": pct}
